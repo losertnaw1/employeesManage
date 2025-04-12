@@ -1,0 +1,32 @@
+[
+    {
+        "fullNameVi": "Lê Quốc Đạt",
+        "fullNameCn": "李国达 (Lǐ guó dá)",
+        "phoneNumber": "0987654321",
+        "mainWorkLocation": "ND",
+        "chineseLevel": "HSK4",
+        "educationLevel": "DH",
+        "projectManager": "Nguyễn Văn A",
+        "rank": "LEAD",
+        "skills": ["SKL01", "SKL02", "SKL03"],
+        "previousProjects": ["PRJ01", "PRJ02"],
+        "referrer": "REF01",
+        "cvUrl": "/uploads/cvs/1710412873123.pdf",
+        "notes": "Nhân viên kỹ thuật giỏi, từng làm PLC Inovance."
+    },
+    {
+        "fullNameVi": "Trần Văn Bình",
+        "fullNameCn": "陈文平 (Chén wén píng)",
+        "phoneNumber": "0971123456",
+        "mainWorkLocation": "HCM",
+        "chineseLevel": "HSK3",
+        "educationLevel": "CD",
+        "projectManager": "Nguyễn Thị C",
+        "rank": "STAFF",
+        "skills": ["SKL04", "SKL05"],
+        "previousProjects": ["PRJ03"],
+        "referrer": "REF02",
+        "cvUrl": "",
+        "notes": "Mới vào công ty 3 tháng."
+    }
+]

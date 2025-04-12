@@ -1,0 +1,5 @@
+[
+    {"_id": "DH", "name": "Đại học"},
+    {"_id": "CD", "name": "Cao đẳng"},
+    {"_id": "TC", "name": "Trung cấp"}
+]

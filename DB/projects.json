@@ -1,0 +1,5 @@
+[
+    {"_id": "PRJ01", "name": "Dự án A", "pm": "Nguyễn Văn A"},
+    {"_id": "PRJ02", "name": "Dự án B", "pm": "Nguyễn Văn A"},
+    {"_id": "PRJ03", "name": "Dự án C", "pm": "Nguyễn Thị C"}
+]

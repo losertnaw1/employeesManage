@@ -1,0 +1,5 @@
+[
+    {"_id": "STAFF", "name": "Nhân viên"},
+    {"_id": "LEAD", "name": "Trưởng nhóm"},
+    {"_id": "MANAGER", "name": "Quản lý"}
+]

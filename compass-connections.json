@@ -1,0 +1,27 @@
+{
+  "type": "Compass Connections",
+  "version": {
+    "$numberInt": "1"
+  },
+  "connections": [
+    {
+      "id": "3db8c4af-14f3-455a-97ca-c41856576aed",
+      "lastUsed": {
+        "$date": {
+          "$numberLong": "1741224145960"
+        }
+      },
+      "favorite": {
+        "name": "cluster0-funa.ai2tq.mongodb.net",
+        "color": "color1"
+      },
+      "savedConnectionType": "favorite",
+      "connectionOptions": {
+        "connectionString": "mongodb+srv://quale2112:0in6zEM3iKlgOUic@cluster0-funa.ai2tq.mongodb.net/",
+        "oidc": {
+          "serializedState": "eyJvaWRjUGx1Z2luU3RhdGVWZXJzaW9uIjowLCJzdGF0ZSI6W119"
+        }
+      }
+    }
+  ]
+}
