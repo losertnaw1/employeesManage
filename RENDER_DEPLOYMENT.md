@@ -19,9 +19,10 @@ Render là một dịch vụ hosting hiện đại, dễ sử dụng và có gó
 1. Đặt tên cho service, ví dụ: "employee-management-api".
 2. Chọn nhánh để triển khai, thường là "main" hoặc "master".
 3. Chọn Runtime: "Node".
-4. Đặt Build Command: `npm install`.
-5. Đặt Start Command: `npm start`.
-6. Chọn gói Free.
+4. **Quan trọng**: Để Root Directory trống (sử dụng thư mục gốc của repository).
+5. Đặt Build Command: `npm run install-backend`.
+6. Đặt Start Command: `npm start`.
+7. Chọn gói Free.
 
 ## 4. Cấu hình biến môi trường
 
