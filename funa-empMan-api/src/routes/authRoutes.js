@@ -7,6 +7,12 @@ const { authenticateToken } = require('../middleware/authMiddleware');
 router.post('/login', authController.login);
 router.post('/refresh', authController.refresh);
 router.post('/logout', authController.logout);
+
+// Add a test route that doesn't require authentication
+router.get('/test', (req, res) => {
+  res.json({ message: 'Auth API is working' });
+});
+
 router.get('/me', authenticateToken, authController.getCurrentAdmin);
 
 // Password reset routes

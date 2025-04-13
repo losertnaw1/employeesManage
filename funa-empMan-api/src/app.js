@@ -25,9 +25,30 @@ const app = express();
 
 // Configure CORS to allow credentials
 app.use(cors({
-  origin: [process.env.CLIENT_URL || 'http://localhost:5173', 'https://employeesmanage-a807d.web.app'],
-  credentials: true
+  origin: function(origin, callback) {
+    // Allow requests with no origin (like mobile apps, curl, etc)
+    if (!origin) return callback(null, true);
+
+    // List of allowed origins
+    const allowedOrigins = [
+      'http://localhost:5173',
+      'https://employeesmanage-a807d.web.app'
+    ];
+
+    if (allowedOrigins.indexOf(origin) !== -1 || !origin) {
+      callback(null, true);
+    } else {
+      console.log('Origin not allowed by CORS:', origin);
+      callback(null, true); // Allow all origins for now to debug
+    }
+  },
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Origin', 'X-Requested-With', 'Content-Type', 'Accept', 'Authorization']
 }));
+
+// Handle preflight requests
+app.options('*', cors());
 
 app.use(express.json());
 app.use(cookieParser()); // For parsing cookies with refresh tokens

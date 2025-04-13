@@ -174,7 +174,16 @@ exports.logout = async (req, res) => {
 // Get current admin info
 exports.getCurrentAdmin = async (req, res) => {
   try {
+    console.log('Getting current admin info...');
+    console.log('Request admin:', req.admin);
+
+    if (!req.admin || !req.admin.id) {
+      return res.status(401).json({ message: 'Unauthorized - No admin in request' });
+    }
+
     const admin = await Admin.findById(req.admin.id).select('-password_hash');
+    console.log('Found admin:', admin ? 'Yes' : 'No');
+
     if (!admin) {
       return res.status(404).json({ message: 'Admin not found' });
     }

@@ -13,7 +13,9 @@ const employeeSchema = new mongoose.Schema({
     previousProjects: [String],
     referrer: String,
     cvUrl: String,
-    notes: String
+    notes: String,
+    updatedAt: Date,
+    createdAt: Date
 }, { timestamps: true });
 
-module.exports = mongoose.model('Employee', employeeSchema);
+module.exports = mongoose.model('Employee', employeeSchema, 'employees');
