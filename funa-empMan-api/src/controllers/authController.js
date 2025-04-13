@@ -319,7 +319,7 @@ exports.createDefaultAdmin = async (req, res) => {
     const admin = new Admin({
       username: 'admin',
       email: 'admin@example.com',
-      password: 'admin123', // Will be hashed by pre-save hook
+      password_hash: 'admin123', // Will be hashed by pre-save hook
       full_name: 'System Administrator',
       role: 'superadmin',
       status: 'active'
