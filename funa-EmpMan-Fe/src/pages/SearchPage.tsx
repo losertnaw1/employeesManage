@@ -223,11 +223,11 @@ const SearchPage = () => {
                   className="filter-select"
                 >
                   <option value="">{t('all') || 'All'}</option>
-                  <option value="High School">{t('highSchool') || 'High School'}</option>
-                  <option value="College">{t('college') || 'College'}</option>
-                  <option value="Bachelor">{t('bachelor') || 'Bachelor'}</option>
-                  <option value="Master">{t('master') || 'Master'}</option>
-                  <option value="PhD">{t('phd') || 'PhD'}</option>
+                  <option value="High School">{t('filterHighSchool') || 'High School'}</option>
+                  <option value="College">{t('filterCollege') || 'College'}</option>
+                  <option value="Bachelor">{t('filterBachelor') || 'Bachelor'}</option>
+                  <option value="Master">{t('filterMaster') || 'Master'}</option>
+                  <option value="PhD">{t('filterPhd') || 'PhD'}</option>
                 </select>
               </div>
 

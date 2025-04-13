@@ -84,7 +84,7 @@ const Profile = () => {
             onClick={() => setIsEditing(!isEditing)}
             className={`profile-edit-button ${isEditing ? 'cancel' : ''}`}
           >
-            {isEditing ? t('cancel') : t('editProfile')}
+            {isEditing ? t('profileCancel') : t('editProfile')}
           </button>
         </div>
 
@@ -148,15 +148,15 @@ const Profile = () => {
               <span className="profile-info-value">{formData.username}</span>
             </div>
             <div className="profile-info-item">
-              <span className="profile-info-label">{t('email')}:</span>
+              <span className="profile-info-label">{t('profileEmail')}:</span>
               <span className="profile-info-value">{formData.email}</span>
             </div>
             <div className="profile-info-item">
-              <span className="profile-info-label">{t('fullName')}:</span>
+              <span className="profile-info-label">{t('profileFullName')}:</span>
               <span className="profile-info-value">{formData.fullName}</span>
             </div>
             <div className="profile-info-item">
-              <span className="profile-info-label">{t('role')}:</span>
+              <span className="profile-info-label">{t('profileRole')}:</span>
               <span className="profile-info-value">{t(formData.role)}</span>
             </div>
           </div>
@@ -171,14 +171,14 @@ const Profile = () => {
             onClick={() => navigate('/change-password')}
             className="profile-button primary"
           >
-            {t('changePassword')}
+            {t('userChangePassword')}
           </button>
 
           <button
             onClick={handleLogout}
             className="profile-button danger"
           >
-            {t('logout')}
+            {t('userLogout')}
           </button>
         </div>
       </div>

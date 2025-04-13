@@ -16,7 +16,7 @@ const Sidebar: FC<SidebarProps> = ({ drawerOpen, toggleSidebar }) => {
     const menuItems = [
         { label: t('dashboard'), path: '/' },
         { label: t('employees'), path: '/employees' },
-        { label: t('search'), path: '/search' },
+        { label: t('navSearch'), path: '/search' },
         { label: t('attendance'), path: '/attendance' },
         { label: t('salary'), path: '/salary' },
         { label: t('leaves'), path: '/leaves' },

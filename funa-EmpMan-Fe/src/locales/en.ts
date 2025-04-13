@@ -59,10 +59,10 @@ const en = {
         // Profile
         profileInformation: "Profile Information",
         editProfile: "Edit Profile",
-        cancel: "Cancel",
-        fullName: "Full Name",
-        email: "Email",
-        role: "Role",
+        profileCancel: "Cancel",
+        profileFullName: "Full Name",
+        profileEmail: "Email",
+        profileRole: "Role",
         saveChanges: "Save Changes",
         accountSettings: "Account Settings",
 
@@ -88,14 +88,14 @@ const en = {
         // Navigation
         dashboard: "Dashboard",
         employees: "Employees",
-        search: "Search",
+        navSearch: "Search",
         attendance: "Attendance",
         salary: "Salary",
         leaves: "Leaves",
         notifications: "Notifications",
-        profile: "Profile",
+        navProfile: "Profile",
         settings: "Settings",
-        logout: "Logout",
+        navLogout: "Logout",
 
         // Dashboard
         totalEmployees: "Total Employees",
@@ -131,7 +131,7 @@ const en = {
         searchEmployees: "Search Employees",
         searchPlaceholder: "Enter search term...",
         searching: "Searching...",
-        search: "Search",
+        searchButton: "Search",
         searchResults: "Search Results",
         noSearchResults: "No employees found matching your search criteria",
         viewDetails: "View Details",
@@ -144,11 +144,11 @@ const en = {
         filtered: "Filtered",
         resetFilters: "Reset Filters",
         enterSkills: "Enter skills...",
-        highSchool: "High School",
-        college: "College",
-        bachelor: "Bachelor",
-        master: "Master",
-        phd: "PhD",
+        filterHighSchool: "High School",
+        filterCollege: "College",
+        filterBachelor: "Bachelor",
+        filterMaster: "Master",
+        filterPhd: "PhD",
 
         // Employee Fields
         fullNameVi: "Vietnamese Name",
@@ -170,11 +170,11 @@ const en = {
         danang: "Da Nang",
 
         // Education Levels
-        highSchool: "High School",
-        college: "College",
+        eduHighSchool: "High School",
+        eduCollege: "College",
         university: "University",
-        master: "Master's Degree",
-        phd: "PhD",
+        eduMaster: "Master's Degree",
+        eduPhd: "PhD",
 
         // Ranks
         intern: "Intern",
@@ -183,21 +183,21 @@ const en = {
         lead: "Team Lead",
         manager: "Manager",
 
-        // Auth
-        login: "Login",
-        username: "Username",
-        password: "Password",
-        forgotPassword: "Forgot Password?",
+        // Auth Login
+        authLogin: "Login",
+        authUsername: "Username",
+        authPassword: "Password",
+        authForgotPassword: "Forgot Password?",
         loginError: "Invalid username or password",
 
-        // Profile
+        // User Profile
         profileInfo: "Profile Information",
-        editProfile: "Edit Profile",
-        accountSettings: "Account Settings",
-        changePassword: "Change Password",
-        email: "Email",
-        fullName: "Full Name",
-        role: "Role"
+        userEditProfile: "Edit Profile",
+        userAccountSettings: "Account Settings",
+        userChangePassword: "Change Password",
+        userEmail: "Email",
+        userFullName: "Full Name",
+        userRole: "Role"
     }
 };
 

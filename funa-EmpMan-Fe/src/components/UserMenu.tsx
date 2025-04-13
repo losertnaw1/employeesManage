@@ -90,17 +90,17 @@ const UserMenu = () => {
           <div className="menu-items">
             <button onClick={handleProfile} className="menu-item">
               <i className="menu-icon profile-icon">👤</i>
-              <span>{t('profile')}</span>
+              <span>{t('userProfile')}</span>
             </button>
 
             <button onClick={handleChangePassword} className="menu-item">
               <i className="menu-icon password-icon">🔑</i>
-              <span>{t('changePassword')}</span>
+              <span>{t('userChangePassword')}</span>
             </button>
 
             <button onClick={handleLogout} className="menu-item">
               <i className="menu-icon logout-icon">🚪</i>
-              <span>{t('logout')}</span>
+              <span>{t('userLogout')}</span>
             </button>
           </div>
         </div>

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchEmployees } from '../api/employeesApi';
-import { Employee } from '../types/employee';
+// import { Employee } from '../types/employee';
 
 const Dashboard = () => {
   const [employeeCount, setEmployeeCount] = useState<number>(0);

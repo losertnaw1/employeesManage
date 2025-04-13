@@ -25,7 +25,7 @@ const app = express();
 
 // Configure CORS to allow credentials
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: [process.env.CLIENT_URL || 'http://localhost:5173', 'https://employeesmanage-a807d.web.app'],
   credentials: true
 }));
 

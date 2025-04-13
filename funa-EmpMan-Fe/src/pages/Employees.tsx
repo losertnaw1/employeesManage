@@ -13,7 +13,8 @@ const Employees = () => {
   const [error, setError] = useState<string | null>(null);
   const [showForm, setShowForm] = useState(false);
   const [currentEmployee, setCurrentEmployee] = useState<Employee | null>(null);
-  const [cvUploaded, setCvUploaded] = useState(false);
+  // State for tracking CV upload status
+  const [, setCvUploaded] = useState(false); // Used in handleCvUpload
 
   const fetchEmployees = async () => {
     try {

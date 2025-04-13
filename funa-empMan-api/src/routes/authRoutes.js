@@ -13,4 +13,7 @@ router.get('/me', authenticateToken, authController.getCurrentAdmin);
 router.post('/forgot-password', authController.requestPasswordReset);
 router.post('/reset-password', authController.resetPassword);
 
+// Admin creation route
+router.post('/create-default-admin', authController.createDefaultAdmin);
+
 module.exports = router;

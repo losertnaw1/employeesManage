@@ -43,7 +43,7 @@ const Login = () => {
     <div className="login-container">
       <div className="login-card">
         <div className="login-header">
-          <h1>{t('login')}</h1>
+          <h1>{t('authLogin')}</h1>
           <p>{t('loginSubtitle') || 'Enter your credentials to access the system'}</p>
         </div>
 
@@ -51,7 +51,7 @@ const Login = () => {
           {error && <div className="login-error">{error}</div>}
 
           <div className="form-group">
-            <label htmlFor="username">{t('username') || 'Username'}</label>
+            <label htmlFor="username">{t('authUsername') || 'Username'}</label>
             <input
               type="text"
               id="username"
@@ -64,7 +64,7 @@ const Login = () => {
           </div>
 
           <div className="form-group">
-            <label htmlFor="password">{t('password') || 'Password'}</label>
+            <label htmlFor="password">{t('authPassword') || 'Password'}</label>
             <div className="password-input-container">
               <input
                 type={showPassword ? 'text' : 'password'}
@@ -79,7 +79,7 @@ const Login = () => {
                 className="toggle-password-button"
                 onClick={() => setShowPassword(!showPassword)}
               >
-                {showPassword ? t('hide') || 'Hide' : t('show') || 'Show'}
+                {showPassword ? t('loginHide') || 'Hide' : t('loginShow') || 'Show'}
               </button>
             </div>
           </div>
@@ -89,12 +89,12 @@ const Login = () => {
             className="login-button"
             disabled={loading}
           >
-            {loading ? t('loggingIn') || 'Logging in...' : t('login') || 'Login'}
+            {loading ? t('loggingIn') || 'Logging in...' : t('authLogin') || 'Login'}
           </button>
 
           <div className="login-links">
             <Link to="/forgot-password" className="forgot-password-link">
-              {t('forgotPassword') || 'Forgot Password?'}
+              {t('authForgotPassword') || 'Forgot Password?'}
             </Link>
           </div>
         </form>

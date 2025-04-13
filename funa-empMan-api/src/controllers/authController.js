@@ -304,3 +304,39 @@ exports.resetPassword = async (req, res) => {
     res.status(500).json({ message: 'Server error during password reset' });
   }
 };
+
+// Create default admin account
+exports.createDefaultAdmin = async (req, res) => {
+  try {
+    // Check if admin already exists
+    const existingAdmin = await Admin.findOne({ username: 'admin' });
+
+    if (existingAdmin) {
+      return res.status(200).json({ message: 'Default admin already exists', admin: { username: existingAdmin.username, email: existingAdmin.email } });
+    }
+
+    // Create default admin
+    const admin = new Admin({
+      username: 'admin',
+      email: 'admin@example.com',
+      password: 'admin123', // Will be hashed by pre-save hook
+      full_name: 'System Administrator',
+      role: 'superadmin',
+      status: 'active'
+    });
+
+    await admin.save();
+
+    res.status(201).json({
+      message: 'Default admin created successfully',
+      admin: {
+        username: admin.username,
+        email: admin.email,
+        role: admin.role
+      }
+    });
+  } catch (error) {
+    console.error('Create default admin error:', error);
+    res.status(500).json({ message: 'Server error', error: error.message });
+  }
+};
