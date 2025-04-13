@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { fetchEmployees } from '../api/employeesApi';
+import { employeeService } from '../services/employeeService';
 // import { Employee } from '../types/employee';
 
 const Dashboard = () => {
@@ -13,7 +13,7 @@ const Dashboard = () => {
     const loadDashboardData = async () => {
       try {
         setLoading(true);
-        const employees = await fetchEmployees();
+        const employees = await employeeService.getAllEmployees();
         setEmployeeCount(employees.length);
         setError(null);
       } catch (err) {

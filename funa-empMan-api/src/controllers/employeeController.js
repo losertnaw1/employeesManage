@@ -2,7 +2,10 @@ const Employee = require('../models/Employee');
 
 exports.getAllEmployees = async (req, res) => {
     try {
+        console.log('Fetching all employees...');
         const employees = await Employee.find();
+        console.log(`Found ${employees.length} employees`);
+        console.log('Employees:', JSON.stringify(employees));
         res.json(employees);
     } catch (error) {
         console.error('Error fetching employees:', error);

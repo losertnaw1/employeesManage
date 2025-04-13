@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
-import axios from 'axios';
 import { Employee } from '../types/employee';
 import '../styles/Employees.css';
 import CVUploader from '../components/CVUploader';
 import { useTranslation } from 'react-i18next';
 import { toast } from '../components/ToastContainer';
+import { employeeService } from '../services/employeeService';
 
 const Employees = () => {
   const { t } = useTranslation();
@@ -19,8 +19,8 @@ const Employees = () => {
   const fetchEmployees = async () => {
     try {
       setLoading(true);
-      const response = await axios.get('http://localhost:5000/api/employees');
-      setEmployees(response.data);
+      const data = await employeeService.getAllEmployees();
+      setEmployees(data);
       setError(null);
     } catch (err) {
       console.error('Error fetching employees:', err);
@@ -43,7 +43,7 @@ const Employees = () => {
   const handleDeleteEmployee = async (id: string, name: string) => {
     if (window.confirm(`Bạn có chắc muốn xóa nhân viên ${name}?`)) {
       try {
-        await axios.delete(`http://localhost:5000/api/employees/${id}`);
+        await employeeService.deleteEmployee(id);
         toast.success(t('deleteSuccess') || `Đã xóa nhân viên: ${name}`);
         // Refresh employee list
         fetchEmployees();
@@ -58,15 +58,15 @@ const Employees = () => {
     try {
       if (currentEmployee) {
         // Update existing employee
-        await axios.put(`http://localhost:5000/api/employees/${currentEmployee._id}`, employee);
+        await employeeService.updateEmployee(currentEmployee._id, employee);
         toast.success(t('updateSuccess') || 'Cập nhật nhân viên thành công!');
       } else {
         // Create new employee
-        const response = await axios.post('http://localhost:5000/api/employees', employee);
+        const data = await employeeService.createEmployee(employee);
         toast.success(t('addSuccess') || 'Thêm nhân viên mới thành công!');
 
         // Cập nhật currentEmployee để hiển thị form upload CV
-        setCurrentEmployee(response.data);
+        setCurrentEmployee(data);
         return; // Không đóng form để người dùng có thể tải CV lên
       }
       setShowForm(false);
@@ -83,7 +83,7 @@ const Employees = () => {
     if (currentEmployee) {
       try {
         // Update employee with CV URL
-        await axios.put(`http://localhost:5000/api/employees/${currentEmployee._id}`, {
+        await employeeService.updateEmployee(currentEmployee._id, {
           cvUrl: cvUrl
         });
 
@@ -392,12 +392,7 @@ const Employees = () => {
                         className="cv-download-button"
                         onClick={async () => {
                           try {
-                            const response = await axios.get(
-                              `http://localhost:5000/api/employees/${emp._id}/download-cv`,
-                              { responseType: 'blob' }
-                            );
-
-                            const blob = response.data;
+                            const blob = await employeeService.downloadCV(emp._id);
                             const url = window.URL.createObjectURL(blob);
                             const a = document.createElement('a');
                             a.href = url;

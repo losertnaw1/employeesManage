@@ -32,6 +32,12 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser()); // For parsing cookies with refresh tokens
 
+// Middleware to log requests
+app.use((req, res, next) => {
+  console.log(`${new Date().toISOString()} - ${req.method} ${req.originalUrl}`);
+  next();
+});
+
 connectDB();
 
 // API routes

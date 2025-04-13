@@ -1,8 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import axios from 'axios';
 import { Employee } from '../types/employee';
 import '../styles/SearchPage.css';
+import { employeeService } from '../services/employeeService';
 
 const SearchPage = () => {
   const { t } = useTranslation();
@@ -77,14 +77,7 @@ const SearchPage = () => {
 
     try {
       // Call the search API endpoint
-      const response = await axios.get('http://localhost:5000/api/employees/search', {
-        params: {
-          field: searchField,
-          term: searchTerm.trim()
-        }
-      });
-
-      const results = response.data;
+      const results = await employeeService.searchEmployees(searchField, searchTerm.trim());
       setSearchResults(results);
       // No need to manually set filteredResults here
       // The useEffect will handle this when searchResults changes
@@ -341,12 +334,7 @@ const SearchPage = () => {
                         className="download-cv-button"
                         onClick={async () => {
                           try {
-                            const response = await axios.get(
-                              `http://localhost:5000/api/employees/${employee._id}/download-cv`,
-                              { responseType: 'blob' }
-                            );
-
-                            const blob = response.data;
+                            const blob = await employeeService.downloadCV(employee._id);
                             const url = window.URL.createObjectURL(blob);
                             const a = document.createElement('a');
                             a.href = url;

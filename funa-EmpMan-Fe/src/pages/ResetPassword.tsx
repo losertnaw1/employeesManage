@@ -56,7 +56,7 @@ const ResetPassword = () => {
       setLoading(true);
       setError(null);
 
-      await authService.resetPassword({
+      await authService.resetPassword(token, {
         token,
         username,
         newPassword
